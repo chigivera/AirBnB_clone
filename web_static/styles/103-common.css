@@ -1,0 +1,72 @@
+/* Base styles with accessibility improvements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #FF5A5F;
+    --text-color: #484848;
+    --border-color: #DDDDDD;
+    --focus-outline: 3px solid #4A90E2;
+}
+
+body {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus styles */
+:focus {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    * {
+        border-color: currentColor;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+}

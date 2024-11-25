@@ -1,0 +1,32 @@
+footer {
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+footer p {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    footer {
+        border-color: currentColor;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        height: 50px;
+    }
+
+    footer p {
+        font-size: 0.875rem;
+    }
+}

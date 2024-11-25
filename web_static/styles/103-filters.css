@@ -1,0 +1,117 @@
+.filters {
+    background-color: white;
+    height: auto;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.filter-content {
+    display: flex;
+    height: 70px;
+}
+
+.locations, .amenities {
+    height: 100%;
+    width: 25%;
+    padding: 15px;
+    position: relative;
+}
+
+.locations {
+    border-right: 1px solid var(--border-color);
+}
+
+.filters h3 {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.filters h4 {
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.popover {
+    display: none;
+    background-color: #FAFAFA;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    margin-top: 0;
+    padding: 20px;
+    z-index: 1;
+}
+
+.locations:focus .popover,
+.amenities:focus .popover,
+.locations:hover .popover,
+.amenities:hover .popover {
+    display: block;
+}
+
+.popover h2 {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+}
+
+.popover ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.search-button {
+    font-size: 18px;
+    background-color: var(--primary-color);
+    color: white;
+    height: 48px;
+    width: 20%;
+    border: none;
+    border-radius: 4px;
+    margin: 11px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover,
+.search-button:focus {
+    background-color: #FF4146;
+    outline: var(--focus-outline);
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    .search-button {
+        border: 1px solid ButtonText;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filters {
+        height: auto;
+    }
+
+    .filter-content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .locations, .amenities {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .search-button {
+        width: calc(100% - 40px);
+        margin: 10px 20px;
+    }
+}
